@@ -1,0 +1,28 @@
+services:
+  - type: web
+    name: lumina-api
+    runtime: node
+    plan: free
+    rootDir: server
+    buildCommand: npm ci
+    startCommand: npm start
+    healthCheckPath: /api/health
+    envVars:
+      - key: MONGO_URI
+        sync: false
+      - key: JWT_SECRET
+        generateValue: true
+      - key: CLIENT_URL
+        sync: false
+
+  - type: web
+    name: lumina-storefront
+    runtime: static
+    buildCommand: npm ci --prefix client && npm run build --prefix client
+    staticPublishPath: client/dist
+    envVars:
+      - key: VITE_API_HOSTNAME
+        fromService:
+          type: web
+          name: lumina-api
+          envVarKey: RENDER_EXTERNAL_HOSTNAME

@@ -16,13 +16,14 @@ Client: http://localhost:5173 | API: http://localhost:5000
 
 Demo admin: `admin@lumina.store` / `Admin123!`
 
-For production, build the client with `npm run build`, deploy the API and static client separately, and configure `VITE_API_URL` plus `CLIENT_URL`.
+## Deploy on Render
 
-## Deploy
+1. Create a MongoDB Atlas database and allow Render network access. On Render's free plan, Atlas may require `0.0.0.0/0`; use a strong database password.
+2. Open the [Render Blueprint deploy page](https://render.com/deploy?repo=https://github.com/Adityasrivastava1730/e-commerce).
+3. In the Blueprint form, set `MONGO_URI` to the Atlas connection string and `CLIENT_URL` to the `https://` URL Render assigns to the Lumina storefront.
+4. Deploy both services. The API hostname is wired into the client build, and Render generates `JWT_SECRET`.
 
-- API: deploy `server` to Render, Railway, or Fly.io with `MONGO_URI`, `JWT_SECRET`, and `CLIENT_URL` environment variables.
-- Client: deploy `client` to Vercel or Netlify with `VITE_API_URL=https://your-api-host/api`.
-- MongoDB: use MongoDB Atlas and allow the API host's network access.
+For separate hosting, set `VITE_API_URL` to the complete API URL ending in `/api` and set the API's `CLIENT_URL` to the storefront origin.
 
 On Windows PowerShell with script execution disabled, use `npm.cmd` in place of `npm`.
 
