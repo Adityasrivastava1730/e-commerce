@@ -15,8 +15,9 @@ services:
       - key: CLIENT_URL
         value: https://lumina-storefront.onrender.com
 
-  - type: static
+  - type: web
     name: lumina-storefront
+    runtime: static
     buildCommand: npm ci --prefix client && npm run build --prefix client
     staticPublishPath: client/dist
     envVars:
