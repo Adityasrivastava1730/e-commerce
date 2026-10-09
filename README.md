@@ -25,3 +25,5 @@ For production, build the client with `npm run build`, deploy the API and static
 - MongoDB: use MongoDB Atlas and allow the API host's network access.
 
 On Windows PowerShell with script execution disabled, use `npm.cmd` in place of `npm`.
+
+http://localhost:5173/

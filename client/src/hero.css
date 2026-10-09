@@ -1,0 +1,79 @@
+.hero-image img {
+  animation: hero-image-enter 650ms ease both;
+}
+
+.hero-image-meta {
+  position: absolute;
+  right: 160px;
+  bottom: 0;
+  left: 0;
+  display: grid;
+  gap: 6px;
+  padding: 54px 30px 26px;
+  color: #fff;
+  background: linear-gradient(transparent, rgb(16 23 21 / 72%));
+  pointer-events: none;
+}
+
+.hero-image-meta span {
+  position: static;
+  font: 500 22px/1.2 var(--serif);
+}
+
+.hero-image-meta small {
+  font-size: 9px;
+  font-weight: 700;
+  letter-spacing: 1.5px;
+}
+
+.hero-image .hero-controls {
+  position: absolute;
+  right: 25px;
+  bottom: 25px;
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  color: #fff;
+}
+
+.hero-image .hero-controls > span {
+  position: static;
+  margin-right: 5px;
+  color: #fff;
+  font-size: 11px;
+}
+
+.hero-controls button {
+  display: grid;
+  width: 38px;
+  height: 38px;
+  place-items: center;
+  border: 1px solid rgb(255 255 255 / 65%);
+  border-radius: 50%;
+  color: #fff;
+  transition: background 180ms ease, color 180ms ease;
+}
+
+.hero-controls button:hover {
+  background: #fff;
+  color: var(--ink);
+}
+
+.hero-controls button:first-of-type svg {
+  transform: rotate(180deg);
+}
+
+@keyframes hero-image-enter {
+  from { opacity: 0.65; transform: scale(1.025); }
+  to { opacity: 1; transform: scale(1); }
+}
+
+@media (max-width: 800px) {
+  .hero-image-meta { right: 150px; padding-left: 24px; }
+}
+
+@media (max-width: 450px) {
+  .hero-image-meta { right: 0; bottom: 68px; padding: 40px 20px 18px; }
+  .hero-image-meta span { font-size: 19px; }
+  .hero-image .hero-controls { right: 16px; bottom: 16px; }
+}
