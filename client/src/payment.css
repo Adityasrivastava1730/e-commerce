@@ -1,0 +1,12 @@
+.demo-notice{margin:18px 0;color:var(--muted);font-size:12px;line-height:1.6}
+.demo-card{padding:24px;background:var(--ink);color:#fff;min-height:170px;display:flex;flex-direction:column;justify-content:space-between}
+.demo-card-top,.demo-card-bottom{display:flex;justify-content:space-between;align-items:center}
+.demo-card-top>span{font-size:16px;font-weight:700}
+.demo-card-top .brand-dot{color:var(--coral)}
+.demo-card-number{font-size:15px;letter-spacing:1px;color:#e7eee7}
+.demo-card-bottom{font-size:9px;letter-spacing:1px;color:#c5d0c8}
+.payment-copy{font-size:12px;line-height:1.7;color:var(--muted)}
+.text-button{display:flex;align-items:center;justify-content:center;gap:8px;margin:12px auto 0;color:var(--muted);font-size:12px}
+.text-button:hover{color:var(--coral)}
+.button:disabled{opacity:.6;cursor:wait}
+@media(max-width:760px){.demo-card{min-height:150px}.payment-page .page-title h1{font-size:44px}}
