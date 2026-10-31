@@ -11,7 +11,7 @@ New accounts verify their email with a one-time code before the account is creat
 3. `npm --prefix server install`
 4. `npm --prefix client install`
 5. Copy `server/.env.example` to `server/.env`.
-6. To send verification emails, configure `SMTP_HOST`, `SMTP_PORT`, `SMTP_USER`, `SMTP_PASS`, and `SMTP_FROM` in `server/.env`. The sample local configuration enables `OTP_DEV_MODE=true`, which returns the code for local testing without SMTP. Never enable this in production.
+6. Configure `SMTP_HOST`, `SMTP_PORT`, `SMTP_USER`, `SMTP_PASS`, and `SMTP_FROM` in `server/.env` to send verification emails. For local-only testing without SMTP, set `OTP_DEV_MODE=true`; the API will return the code in its response. Never enable this in production.
 7. `npm run seed` to create demo products and the admin account.
 8. `npm run dev`
 
